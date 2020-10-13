@@ -1,0 +1,22 @@
+//VARS---------------------------------
+//WIDTH CONTAINER
+$maxWidth: 1200;
+$widthPadding: 15px;
+
+//FONT NAME
+$fontFirst: "";
+$fontSecond: "";
+$fontThird: "";
+
+//FONT SIZE
+$SizeMain: 16px;
+
+//COLOR
+$ColorMain: #fff;
+
+//ADAPTIVE FONT
+@mixin adaptiv-font($pcSize, $mobSize) {
+  $addSize: $pcSize - $mobSize;
+  $maxWidth: $maxWidth - 320;
+  font-size: calc(#{$mobSize + px} + #{$addSize} * ((100vw - 320px) / #{$maxWidth}));
+}
